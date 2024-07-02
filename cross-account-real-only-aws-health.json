@@ -1,0 +1,57 @@
+{
+    "Resources": {
+        "ROLE": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName": "cross-account-health-role",
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": "211125535116"
+                            },
+                            "Action": "sts:AssumeRole"
+                        }
+                    ]
+                },
+                "Policies": [
+                    {
+                        "PolicyName": "HealthDescribeAccessPolicy",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Sid": "HealthDescribeAccess",
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "health:Describe*"
+                                    ],
+                                    "Resource": "*"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "Outputs": {
+        "ROLENAME": {
+            "Description": "The following role has been created for cross account access",
+            "Value": {
+                "Ref": "ROLE"
+            }
+        },
+        "ROLEARN": {
+            "Description": "The ARN for the role",
+            "Value": {
+                "Fn::GetAtt": [
+                    "ROLE",
+                    "Arn"
+                ]
+            }
+        }
+    }
+}

@@ -76,8 +76,8 @@ def run_for_account(account_id, role_name, csv_writer):
 
 if __name__ == "__main__":
     accounts = [
-        {'account_id': '211125535116', 'role_name': 'cross-account-war-role'},
-        {'account_id': '590183713919', 'role_name': 'cross-account-war-role'}
+        {'account_id': '211125535116', 'role_name': 'cross-account-health-role'},
+        {'account_id': '590183713919', 'role_name': 'cross-account-health-role'}
     ]
 
     output_file = 'aws_health_events.csv'
