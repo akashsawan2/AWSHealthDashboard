@@ -1,0 +1,26 @@
+ARN,Service,EventTypeCode,EventTypeCategory,Region,StartTime,LastUpdatedTime,StatusCode,EventScopeCode,Description
+arn:aws:health:ap-south-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_f4d164ed392bd2601a1a162d7aedc44c533c56f784168935e7253876a0ce943f,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-14T12:30:00+05:30,2024-06-10T01:52:43.082000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support"
