@@ -101,20 +101,7 @@ def run_for_account(account_id, role_name, csv_writer):
 
 if __name__ == "__main__":
     accounts = [
-        {'account_id': '998604591968', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '323529618611', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '350027074327', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '914066148492', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '998604591968', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '578845538067', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '327798492615', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '471726860506', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '338897596704', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '078331826294', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '260126818574', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '143948849258', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '470064715030', 'role_name': 'TTN_ReadOnly'},
-        {'account_id': '924456361876', 'role_name': 'TTN_ReadOnly'}
+        {'account_id': '211125535116', 'role_name': 'TTN_ReadOnly'}
     ]
 
     output_file = 'aws_health_events.csv'
