@@ -1,4 +1,4 @@
-ARN,Service,EventTypeCode,EventTypeCategory,Region,StartTime,LastUpdatedTime,StatusCode,EventScopeCode,Description
+ARN,Service,EventTypeCode,EventTypeCategory,Region,StartTime,LastUpdatedTime,StatusCode,EventScopeCode,Description,AffectedEntities
 arn:aws:health:ap-south-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_f4d164ed392bd2601a1a162d7aedc44c533c56f784168935e7253876a0ce943f,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-14T12:30:00+05:30,2024-06-10T01:52:43.082000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
 
 We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
@@ -23,4 +23,4 @@ If you have any concerns or require further assistance, please contact AWS Suppo
 [2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
 [3] https://aws.amazon.com/cli/
 [4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
-[5] https://aws.amazon.com/support"
+[5] https://aws.amazon.com/support",arn:aws:lambda:ap-south-1:590183713919:function:aws-sso-onboarding-lambda

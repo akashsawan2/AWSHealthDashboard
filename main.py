@@ -25,9 +25,33 @@ def event_details(event, session, csv_writer):
             "LastUpdatedTime": event_details['event']['lastUpdatedTime'].isoformat(),
             "StatusCode": event_details['event']['statusCode'],
             "EventScopeCode": event_details['event']['eventScopeCode'],
-            "Description": event_details['eventDescription']['latestDescription']
+            "Description": event_details['eventDescription']['latestDescription'],
+            "AffectedEntities": ""
         }
+
+        affected_entities = get_affected_entities(event, session)
+        event_info["AffectedEntities"] = ", ".join(affected_entities)
+        
         csv_writer.writerow(event_info)
+
+def get_affected_entities(event, session):
+    health_client = session.client('health')
+    events_paginator_affectedResource = health_client.get_paginator('describe_affected_entities')
+    events_pages_affected = events_paginator_affectedResource.paginate(filter={
+        'eventArns': [event['arn']],
+        'lastUpdatedTimes': [
+            {
+                'from': datetime.datetime.now() - datetime.timedelta(days=180)
+            }
+        ]
+    })
+
+    affected_entities = []
+    for page in events_pages_affected:
+        for entity in page['entities']:
+            affected_entities.append(entity['entityValue'])
+    
+    return affected_entities
 
 def describe_events(session, csv_writer, account_id):
     health_client = session.client('health')
@@ -82,12 +106,11 @@ if __name__ == "__main__":
 
     output_file = 'aws_health_events.csv'
 
-
     if os.path.isfile(output_file):
         os.remove(output_file)
 
     with open(output_file, mode='w', newline='') as csv_file:
-        fieldnames = ["ARN", "Service", "EventTypeCode", "EventTypeCategory", "Region", "StartTime", "LastUpdatedTime", "StatusCode", "EventScopeCode", "Description"]
+        fieldnames = ["ARN", "Service", "EventTypeCode", "EventTypeCategory", "Region", "StartTime", "LastUpdatedTime", "StatusCode", "EventScopeCode", "Description", "AffectedEntities"]
         csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         
         csv_writer.writeheader()
