@@ -81,14 +81,16 @@ if __name__ == "__main__":
     ]
 
     output_file = 'aws_health_events.csv'
-    file_exists = os.path.isfile(output_file)
 
-    with open(output_file, mode='a', newline='') as csv_file:
+
+    if os.path.isfile(output_file):
+        os.remove(output_file)
+
+    with open(output_file, mode='w', newline='') as csv_file:
         fieldnames = ["ARN", "Service", "EventTypeCode", "EventTypeCategory", "Region", "StartTime", "LastUpdatedTime", "StatusCode", "EventScopeCode", "Description"]
         csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         
-        if not file_exists:
-            csv_writer.writeheader()
+        csv_writer.writeheader()
 
         for account in accounts:
             run_for_account(account['account_id'], account['role_name'], csv_writer)
