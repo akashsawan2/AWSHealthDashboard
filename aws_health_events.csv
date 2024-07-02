@@ -1,5 +1,22 @@
-ARN,Service,EventTypeCode,EventTypeCategory,Region,StartTime,LastUpdatedTime,StatusCode,EventScopeCode,Description,AffectedEntities
-arn:aws:health:ap-south-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_f4d164ed392bd2601a1a162d7aedc44c533c56f784168935e7253876a0ce943f,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-14T12:30:00+05:30,2024-06-10T01:52:43.082000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+AccountID,ARN,Service,EventTypeCode,EventTypeCategory,Region,StartTime,LastUpdatedTime,StatusCode,EventScopeCode,Description,AffectedEntities
+998604591968,arn:aws:health:us-west-2::event/EKS/AWS_EKS_PLANNED_LIFECYCLE_EVENT/AWS_EKS_PLANNED_LIFECYCLE_EVENT_66875726ef70fb055b6fb1cf6349fe215f4315c24618ac13d083a7a2e57951c9,EKS,AWS_EKS_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-west-2,2024-07-15T12:30:00+05:30,2024-05-17T03:29:05.097000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you currently have 1 or more Amazon EKS clusters running on Kubernetes version 1.21, listed in the 'Affected resources' tab. If you have deleted this instance, or already upgraded your EKS cluster, please disregard this message.
+
+We previously notified you that extended support for Kubernetes versions now includes Kubernetes version 1.21 and 1.22 [1]. Extended support for Kubernetes version 1.21 has been available since April 1, 2024. Starting May 1, 2024, your Amazon EKS clusters running on Kubernetes version 1.21 in extended support will be charged at $0.60 per cluster hour.
+
+Extended support for Kubernetes version 1.21 in Amazon EKS will end on July 15, 2024. After July 15, 2024, Kubernetes version 1.21 will no longer be supported on Amazon EKS, and all Amazon EKS clusters running on Kubernetes version 1.21 will be automatically updated to the latest platform version of Kubernetes version 1.22. 
+
+A list of your affected resources can be found within the ""Affected resources"" tab. 
+
+Rather than wait for the automatic upgrades, we recommend that you update your 1.21 clusters to Kubernetes version 1.23 or newer before July 15, 2024. If you do not want to use extended support, we recommend that you update your 1.21 clusters to Kubernetes version 1.26 or newer before May 1, 2024. To learn more about the extended support for Kubernetes versions pricing, see our announcement [2]. For instructions on how to update your cluster(s), see the Amazon EKS service documentation [3]. To learn more on Kubernetes version support, visit the Amazon EKS service documentation [4]. 
+
+If you have any questions or concerns, please contact AWS Support [5]. 
+
+[1] https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-eks-support-kubernetes-versions/ 
+[2] https://aws.amazon.com/blogs/containers/amazon-eks-extended-support-for-kubernetes-versions-pricing/
+[3] https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html
+[4] https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+[5] https://aws.amazon.com/support ",arn:aws:eks:us-west-2:998604591968:cluster/eks-cluster-devprod
+998604591968,arn:aws:health:ap-southeast-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_510fa8eb8e36de23099d8c6b0d26485a4e9313bc69d1d84cdcebee4693f5be92,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-southeast-1,2024-10-14T12:30:00+05:30,2024-04-23T13:25:55.939000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
 
 We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
 
@@ -23,4 +40,1231 @@ If you have any concerns or require further assistance, please contact AWS Suppo
 [2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
 [3] https://aws.amazon.com/cli/
 [4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
-[5] https://aws.amazon.com/support",arn:aws:lambda:ap-south-1:590183713919:function:aws-sso-onboarding-lambda
+[5] https://aws.amazon.com/support",arn:aws:lambda:ap-southeast-1:998604591968:function:Cleanup
+323529618611,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_7daf3fcfab95aa2d388cecf9f34b19f1d6bd2eeb168debe4af29bb05727c0cfd,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-08-22T12:30:00+05:30,2024-06-12T08:56:15.633000+05:30,upcoming,ACCOUNT_SPECIFIC,"[AWS Health may periodically trigger reminder notifications about this communication.]
+
+You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using a SSL/TLS Certificate that is expiring on August 22, 2024.  
+
+A list of your affected resources can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email, it is likely because you created new instances using the 2019 Certificate Authority (CA). After January 25, 2024 all newly created instances that do not explicitly specify a different CA will use the ‘rds-ca-rsa2048-g1’ CA. For information on setting an account level CA override, see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the SSL/TLS protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a CA generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in the AP-SOUTH-1 Region will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The following is the general process to do this:
+
+First, update your application clients with the new certificate, if your application client is using a trust store then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates in our User Guide [2]. For more detailed instructions on updating the trust stores on your client application see our documentation [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issued CAs. ‘rds-ca-rsa2048-g1’ is the default recommended CA because there is no algorithm change. The other CAs use new key algorithms so it could require more testing of your client setup to ensure compatibility. For more information on the new CAs see our documentation [4].
+
+Third, if you want to use a different CA than the default ‘rds-ca-rsa2048-g1’, you will need to set an account level CA override so your new instances will use the CA of your choice. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates, please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. As soon as possible - You should update your client trust store, then you can update your instances server certificate to one generated by one of the new CAs. 
+
+2. After January 26, 2024 - any new database instances default to using the ‘rds-ca-rsa2048-g1’ certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+3. After August 22, 2024 - ‘rds-ca-2019’ will expire. You will need to take action before August 22, 2024, to prevent connectivity failures to your existing database instances.
+
+For more information see our blog [9], and if you have questions or concerns, please contact AWS Support [10].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://aws.amazon.com/blogs/aws/rotate-your-ssl-tls-certificates-now-amazon-rds-and-amazon-aurora-expire-in-2024/
+[10] https://console.aws.amazon.com/support/home","arn:aws:rds:ap-south-1:323529618611:db:smscampaigns-mum-reader, arn:aws:rds:ap-south-1:323529618611:db:la-prod-mum-new-reader2, arn:aws:rds:ap-south-1:323529618611:db:la-prod-new4, arn:aws:rds:ap-south-1:323529618611:db:la-prod-mum-new-reader-3, arn:aws:rds:ap-south-1:323529618611:db:addressbook-db-instance-1, arn:aws:rds:ap-south-1:323529618611:db:leadqualixv2, arn:aws:rds:ap-south-1:323529618611:db:messagingdb-instance-1-ap-south-1b, arn:aws:rds:ap-south-1:323529618611:db:smscampaigns-writer, arn:aws:rds:ap-south-1:323529618611:db:la-prod-mum-reader1, arn:aws:rds:ap-south-1:323529618611:db:messagingdb-instance-1, arn:aws:rds:ap-south-1:323529618611:db:addressbook-instance-1"
+323529618611,arn:aws:health:ap-south-1::event/DMS/AWS_DMS_PLANNED_LIFECYCLE_EVENT/AWS_DMS_PLANNED_LIFECYCLE_EVENT_24344f7a531b63c37e549aa226a782bee53ff815b168c06c6320461379160af2,DMS,AWS_DMS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-08-30T12:30:00+05:30,2024-06-05T20:31:27.305000+05:30,upcoming,ACCOUNT_SPECIFIC,"[AWS Health may periodically trigger reminder notifications about this communication.]
+
+You are receiving this message because you have one or more instances running AWS Database Migration Service (DMS) version 3.4.6. In order to give customers more time to plan and upgrade their replication instance version, we are extending the previously announced deprecation date to August 30, 2024 (and in consequence July 31, 2024 as the start of no new instance create date). This notification is aimed to provide you with sufficient time to plan and perform your upgrade(s). However, if you have already upgraded your AWS Database Migration Service (DMS) you can disregard the rest of this message. Please note that after this period, any instances still running this version will be upgraded to the latest DMS release even if they have not enabled for auto-upgrade.
+
+A list of your impacted resource(s) can be found in the 'Affected resources' tab.
+
+You can initiate an upgrade yourself when it is convenient for you by completing the following steps:
+
+1. Going to the ""Replication instances"" tab in the AWS DMS Management Console
+2. Select the instance to upgrade
+3. Clicking modify and changing the ""Replication engine version"" setting to the latest available version.
+
+Note: If you choose the ""Apply changes immediately"" option, the upgrade will be initiated immediately after clicking the ""Modify"" button. If you choose not to apply the change immediately, the upgrade will be performed during your configured maintenance window. To learn more about the AWS DMS maintenance and upgrade process, please review 'Working with replication engine versions' [1].
+
+For migration tasks that are running, tables in the full load phase at the time of the upgrade will be reloaded from the start once the upgrade is complete. Replication for all other tables should resume without interruption once the upgrade is complete. We recommend testing all current migration tasks against the latest available version of an AWS DMS replication instance before upgrading the instances from version 3.4.6.
+
+You can review a list of all DMS versions to-date in our AWS DMS release notes [2]. We recommend that you upgrade your replication instances to version 3.5.1.
+
+If you have any questions or concerns, please contact the AWS Support team [3].
+
+[1] https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.EngineVersions.html
+[2] https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReleaseNotes.html
+[3] https://aws.amazon.com/support","arn:aws:dms:ap-south-1:323529618611:db:LJ5I72GJQIGKAJIC275DOTV5AZ4SH5CE3NHQHNY, arn:aws:dms:ap-south-1:323529618611:rep:LJ5I72GJQIGKAJIC275DOTV5AZ4SH5CE3NHQHNY"
+323529618611,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_98763d248b1c352aee275ba70e8529f2a4c25a32c502fde56852c47255be06de,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-31T12:30:00+05:30,2024-05-21T03:08:29.654000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTH-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication does not apply to you.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 6-month reminder, following up from our previous 12-month notice, so you have sufficient time to upgrade your database cluster(s). Please note that upgrading between major versions requires more extensive planning and testing than for a minor version and the process can take substantial time.
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. For how to do the upgrades please consult our documentation [1]. Upgrades may be performed using in-place upgrade [2], snapshot and restore [3], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [4]. The amount of downtime your system will experience depends on the upgrade technique chosen, as well as properties of your schema.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders before the standard support deadline. You can find the latest information needed to plan your upgrade in our 'User Guide for Aurora' [5].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [6].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reached end of life on October 31, 2023. If you need more time to complete the upgrades, you can use Amazon RDS Extended Support [7] for Aurora MySQL 2. RDS Extended Support [8] for Aurora is a paid service [9] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. After October 31, 2024 all your databases continue running Aurora MySQL 2 will be automatically enrolled in RDS Extended Support. Charges for RDS Extended Support will start accruing from December 1, 2024. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024. If your databases are not running Aurora MySQL minor versions 2.11 or 2.12 by October 31, 2024 they will be upgraded before being enrolled into RDS Extended Support. This upgrade will occur during your maintenance window and can not be turned off. 
+
+Should you have any questions or concerns, the AWS Support Team is available on AWS re:Post [10] and via AWS Support. [11]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Updates.MajorVersionUpgrade.2to3 
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure 
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html 
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html 
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html 
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster 
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html 
+[8] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/ 
+[9] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs 
+[10] https://repost.aws/ 
+[11] https://aws.amazon.com/support","arn:aws:rds:ap-south-1:323529618611:cluster:addressbook, arn:aws:rds:ap-south-1:323529618611:cluster:la-prod-mum, arn:aws:rds:ap-south-1:323529618611:cluster:addressbook-db, arn:aws:rds:ap-south-1:323529618611:cluster:smscampaigns"
+323529618611,arn:aws:health:us-east-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_e0ed11e118c13954d388de9e5e7f4f534600e994e66c2f1296d6cd126bf99689,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-east-1,2024-10-14T12:30:00+05:30,2024-04-23T14:34:47.055000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support",arn:aws:lambda:us-east-1:323529618611:function:inactive_users_report
+323529618611,arn:aws:health:ap-south-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_e5406210867067a5732ca3f927946e600541d532a2b8c80cbc24e922659f23c0,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-14T12:30:00+05:30,2024-04-20T23:43:16.336000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support","arn:aws:lambda:ap-south-1:323529618611:function:PrometheusMonitoring, arn:aws:lambda:ap-south-1:323529618611:function:spot-termination-handler"
+323529618611,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_17b943f7a114ae2b7e9f2cd3f8617c015c796d424bc43c3c5f6e9763bf8e9388,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-10-31T12:30:00+05:30,2023-11-01T09:50:00.241000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTH-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication doesn't apply to you, and a separate message will be sent in the future.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 12-month notice, so you have sufficient time to upgrade your database cluster(s).
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. Upgrades may be performed using in-place upgrade [1], snapshot and restore [2], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [3]. The amount of downtime your system will experience depends on the upgrade technique chosen.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders throughout the year prior to the end of the standard support deadline. You can find additional information needed to plan your upgrade in our 'User Guide for Aurora' [4].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [5].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reaches end of life on October 31, 2023. If you need more time to complete the upgrades, you can opt into Amazon RDS Extended Support [6] for Aurora MySQL 2. RDS Extended Support [7] for Aurora is a paid service [8] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. To gain access to extended support, you will need to explicitly opt in to RDS Extended Support. We will reach out to you in early 2024 with detailed instructions for opting into RDS Extended Support through the RDS console, Command Line Interface (CLI), and RDS APIs. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024.
+
+Should you have any questions or concerns, the AWS Support Team is available on the community forums [9] and via Premium Support. [10]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html
+[7] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/
+[8] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs
+[9] https://repost.aws/
+[10] https://aws.amazon.com/support",
+323529618611,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_ed05552b1fcbf6193bd836b9f099e9807a8de4b624c1ead263564a5ae67ab6c2,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T13:30:00+05:30,2023-10-14T05:50:34.845000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+323529618611,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_40d2690ca0ea2498bdfad167ca24137ee8cd04b26af5dcf6f2ec347025a5267b,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T12:30:00+05:30,2023-08-26T13:11:05.900000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+350027074327,arn:aws:health:ap-southeast-1::event/DMS/AWS_DMS_PLANNED_LIFECYCLE_EVENT/AWS_DMS_PLANNED_LIFECYCLE_EVENT_bb7bee537cb6f92b89a250580eaff5ef167fa1e23bd90065d73d01dab817ab85,DMS,AWS_DMS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-southeast-1,2024-08-30T12:30:00+05:30,2024-06-05T20:08:20.307000+05:30,upcoming,ACCOUNT_SPECIFIC,"[AWS Health may periodically trigger reminder notifications about this communication.]
+
+You are receiving this message because you have one or more instances running AWS Database Migration Service (DMS) version 3.4.6. In order to give customers more time to plan and upgrade their replication instance version, we are extending the previously announced deprecation date to August 30, 2024 (and in consequence July 31, 2024 as the start of no new instance create date). This notification is aimed to provide you with sufficient time to plan and perform your upgrade(s). However, if you have already upgraded your AWS Database Migration Service (DMS) you can disregard the rest of this message. Please note that after this period, any instances still running this version will be upgraded to the latest DMS release even if they have not enabled for auto-upgrade.
+
+A list of your impacted resource(s) can be found in the 'Affected resources' tab.
+
+You can initiate an upgrade yourself when it is convenient for you by completing the following steps:
+
+1. Going to the ""Replication instances"" tab in the AWS DMS Management Console
+2. Select the instance to upgrade
+3. Clicking modify and changing the ""Replication engine version"" setting to the latest available version.
+
+Note: If you choose the ""Apply changes immediately"" option, the upgrade will be initiated immediately after clicking the ""Modify"" button. If you choose not to apply the change immediately, the upgrade will be performed during your configured maintenance window. To learn more about the AWS DMS maintenance and upgrade process, please review 'Working with replication engine versions' [1].
+
+For migration tasks that are running, tables in the full load phase at the time of the upgrade will be reloaded from the start once the upgrade is complete. Replication for all other tables should resume without interruption once the upgrade is complete. We recommend testing all current migration tasks against the latest available version of an AWS DMS replication instance before upgrading the instances from version 3.4.6.
+
+You can review a list of all DMS versions to-date in our AWS DMS release notes [2]. We recommend that you upgrade your replication instances to version 3.5.1.
+
+If you have any questions or concerns, please contact the AWS Support team [3].
+
+[1] https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.EngineVersions.html
+[2] https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReleaseNotes.html
+[3] https://aws.amazon.com/support","arn:aws:dms:ap-southeast-1:350027074327:db:VS66DJLUZXEIKSZZJJJW2TMPWD3VXXTNPBN3O6I, arn:aws:dms:ap-southeast-1:350027074327:rep:VS66DJLUZXEIKSZZJJJW2TMPWD3VXXTNPBN3O6I"
+350027074327,arn:aws:health:ap-southeast-1::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_efc1b655821bbad2ad57b74972ab9b30b205dc0365a5ea0f20a1dd47e45161db,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-southeast-1,2024-10-31T12:30:00+05:30,2024-05-21T02:50:06.872000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTHEAST-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication does not apply to you.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 6-month reminder, following up from our previous 12-month notice, so you have sufficient time to upgrade your database cluster(s). Please note that upgrading between major versions requires more extensive planning and testing than for a minor version and the process can take substantial time.
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. For how to do the upgrades please consult our documentation [1]. Upgrades may be performed using in-place upgrade [2], snapshot and restore [3], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [4]. The amount of downtime your system will experience depends on the upgrade technique chosen, as well as properties of your schema.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders before the standard support deadline. You can find the latest information needed to plan your upgrade in our 'User Guide for Aurora' [5].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [6].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reached end of life on October 31, 2023. If you need more time to complete the upgrades, you can use Amazon RDS Extended Support [7] for Aurora MySQL 2. RDS Extended Support [8] for Aurora is a paid service [9] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. After October 31, 2024 all your databases continue running Aurora MySQL 2 will be automatically enrolled in RDS Extended Support. Charges for RDS Extended Support will start accruing from December 1, 2024. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024. If your databases are not running Aurora MySQL minor versions 2.11 or 2.12 by October 31, 2024 they will be upgraded before being enrolled into RDS Extended Support. This upgrade will occur during your maintenance window and can not be turned off. 
+
+Should you have any questions or concerns, the AWS Support Team is available on AWS re:Post [10] and via AWS Support. [11]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Updates.MajorVersionUpgrade.2to3 
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure 
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html 
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html 
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html 
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster 
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html 
+[8] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/ 
+[9] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs 
+[10] https://repost.aws/ 
+[11] https://aws.amazon.com/support","arn:aws:rds:ap-southeast-1:350027074327:cluster:sms-campaigns, arn:aws:rds:ap-southeast-1:350027074327:cluster:addressbook"
+350027074327,arn:aws:health:us-east-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_e0ed11e118c13954d388de9e5e7f4f534600e994e66c2f1296d6cd126bf99689,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-east-1,2024-10-14T12:30:00+05:30,2024-04-23T14:34:47.055000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support",arn:aws:lambda:us-east-1:350027074327:function:inactive_users_report
+350027074327,arn:aws:health:ap-southeast-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_510fa8eb8e36de23099d8c6b0d26485a4e9313bc69d1d84cdcebee4693f5be92,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-southeast-1,2024-10-14T12:30:00+05:30,2024-04-23T13:25:55.939000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support","arn:aws:lambda:ap-southeast-1:350027074327:function:spot-termination-handler, arn:aws:lambda:ap-southeast-1:350027074327:function:test"
+350027074327,arn:aws:health:ap-southeast-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_589783563abd28f391e1bba154dcb27a29e1e5d7b9489991550a66e2dd09a8ad,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-southeast-1,2024-10-31T12:30:00+05:30,2023-11-01T09:17:23.011000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTHEAST-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication doesn't apply to you, and a separate message will be sent in the future.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 12-month notice, so you have sufficient time to upgrade your database cluster(s).
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. Upgrades may be performed using in-place upgrade [1], snapshot and restore [2], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [3]. The amount of downtime your system will experience depends on the upgrade technique chosen.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders throughout the year prior to the end of the standard support deadline. You can find additional information needed to plan your upgrade in our 'User Guide for Aurora' [4].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [5].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reaches end of life on October 31, 2023. If you need more time to complete the upgrades, you can opt into Amazon RDS Extended Support [6] for Aurora MySQL 2. RDS Extended Support [7] for Aurora is a paid service [8] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. To gain access to extended support, you will need to explicitly opt in to RDS Extended Support. We will reach out to you in early 2024 with detailed instructions for opting into RDS Extended Support through the RDS console, Command Line Interface (CLI), and RDS APIs. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024.
+
+Should you have any questions or concerns, the AWS Support Team is available on the community forums [9] and via Premium Support. [10]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html
+[7] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/
+[8] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs
+[9] https://repost.aws/
+[10] https://aws.amazon.com/support",
+350027074327,arn:aws:health:ap-southeast-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_465f2088d70fccd8772464b57f552f31fe3fcc0f8bc291132f61f9ccd0a05d67,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-southeast-1,2024-08-22T13:30:00+05:30,2023-10-14T01:40:08.567000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTHEAST-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTHEAST-1 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+350027074327,arn:aws:health:ap-southeast-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_283c705f2377b6ce0e3ad4c33031c63d752a106b9e07e304d079cc4779562320,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-southeast-1,2024-08-22T12:30:00+05:30,2023-08-26T14:12:01.523000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTHEAST-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTHEAST-1  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+914066148492,arn:aws:health:us-west-2::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_42cf95fd93eb47673a4992ccbb55d40da363c10e742c8dd2cad3d05c265abbad,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-west-2,2024-10-31T12:30:00+05:30,2024-05-21T02:27:16.676000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the US-WEST-2 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication does not apply to you.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 6-month reminder, following up from our previous 12-month notice, so you have sufficient time to upgrade your database cluster(s). Please note that upgrading between major versions requires more extensive planning and testing than for a minor version and the process can take substantial time.
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. For how to do the upgrades please consult our documentation [1]. Upgrades may be performed using in-place upgrade [2], snapshot and restore [3], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [4]. The amount of downtime your system will experience depends on the upgrade technique chosen, as well as properties of your schema.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders before the standard support deadline. You can find the latest information needed to plan your upgrade in our 'User Guide for Aurora' [5].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [6].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reached end of life on October 31, 2023. If you need more time to complete the upgrades, you can use Amazon RDS Extended Support [7] for Aurora MySQL 2. RDS Extended Support [8] for Aurora is a paid service [9] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. After October 31, 2024 all your databases continue running Aurora MySQL 2 will be automatically enrolled in RDS Extended Support. Charges for RDS Extended Support will start accruing from December 1, 2024. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024. If your databases are not running Aurora MySQL minor versions 2.11 or 2.12 by October 31, 2024 they will be upgraded before being enrolled into RDS Extended Support. This upgrade will occur during your maintenance window and can not be turned off. 
+
+Should you have any questions or concerns, the AWS Support Team is available on AWS re:Post [10] and via AWS Support. [11]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Updates.MajorVersionUpgrade.2to3 
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure 
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html 
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html 
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html 
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster 
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html 
+[8] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/ 
+[9] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs 
+[10] https://repost.aws/ 
+[11] https://aws.amazon.com/support",arn:aws:rds:us-west-2:914066148492:cluster:sms-campaigns
+914066148492,arn:aws:health:us-east-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_e0ed11e118c13954d388de9e5e7f4f534600e994e66c2f1296d6cd126bf99689,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-east-1,2024-10-14T12:30:00+05:30,2024-04-23T14:34:47.055000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support","arn:aws:lambda:us-east-1:914066148492:function:testing-harshit, arn:aws:lambda:us-east-1:914066148492:function:inactive_users_report"
+914066148492,arn:aws:health:ap-southeast-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_510fa8eb8e36de23099d8c6b0d26485a4e9313bc69d1d84cdcebee4693f5be92,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-southeast-1,2024-10-14T12:30:00+05:30,2024-04-23T13:25:55.939000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support",arn:aws:lambda:ap-southeast-1:914066148492:function:fetch_user_data
+914066148492,arn:aws:health:us-west-2::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_cb0f8949414adf6575a90d334b70ae5034c8d989e2d57094b388ce538e180388,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-west-2,2024-10-14T12:30:00+05:30,2024-04-21T15:31:04.992000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support","arn:aws:lambda:us-west-2:914066148492:function:HttpToHttpsRedirect, arn:aws:lambda:us-west-2:914066148492:function:SMS-events-processor"
+914066148492,arn:aws:health:us-west-2::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_7b70944093b97e7686ed9b79ab5d222ada8c2154842f8d879bc95d1808b7c05c,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,us-west-2,2024-10-31T12:30:00+05:30,2023-11-01T09:00:50.759000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the US-WEST-2 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication doesn't apply to you, and a separate message will be sent in the future.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 12-month notice, so you have sufficient time to upgrade your database cluster(s).
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. Upgrades may be performed using in-place upgrade [1], snapshot and restore [2], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [3]. The amount of downtime your system will experience depends on the upgrade technique chosen.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders throughout the year prior to the end of the standard support deadline. You can find additional information needed to plan your upgrade in our 'User Guide for Aurora' [4].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [5].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reaches end of life on October 31, 2023. If you need more time to complete the upgrades, you can opt into Amazon RDS Extended Support [6] for Aurora MySQL 2. RDS Extended Support [7] for Aurora is a paid service [8] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. To gain access to extended support, you will need to explicitly opt in to RDS Extended Support. We will reach out to you in early 2024 with detailed instructions for opting into RDS Extended Support through the RDS console, Command Line Interface (CLI), and RDS APIs. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024.
+
+Should you have any questions or concerns, the AWS Support Team is available on the community forums [9] and via Premium Support. [10]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html
+[7] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/
+[8] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs
+[9] https://repost.aws/
+[10] https://aws.amazon.com/support",
+914066148492,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_ed05552b1fcbf6193bd836b9f099e9807a8de4b624c1ead263564a5ae67ab6c2,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T13:30:00+05:30,2023-10-14T05:50:34.845000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+914066148492,arn:aws:health:us-west-2::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_d1b7aa8c34e3da07d34493dd2e4b2d9a8974595e4ccab8e6af0fe49eed9a285b,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,us-west-2,2024-08-22T13:30:00+05:30,2023-10-14T04:43:43.486000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the US-WEST-2 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in US-WEST-2 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+914066148492,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_40d2690ca0ea2498bdfad167ca24137ee8cd04b26af5dcf6f2ec347025a5267b,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T12:30:00+05:30,2023-08-26T13:11:05.900000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+914066148492,arn:aws:health:us-west-2::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_9585b1c13c2263d3eaab36a07ac5713c94a7a1f556515a7e4f8bd74f4d8be8f1,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,us-west-2,2024-08-22T12:30:00+05:30,2023-08-26T02:01:56.669000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the US-WEST-2 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in US-WEST-2  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+998604591968,arn:aws:health:us-west-2::event/EKS/AWS_EKS_PLANNED_LIFECYCLE_EVENT/AWS_EKS_PLANNED_LIFECYCLE_EVENT_66875726ef70fb055b6fb1cf6349fe215f4315c24618ac13d083a7a2e57951c9,EKS,AWS_EKS_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-west-2,2024-07-15T12:30:00+05:30,2024-05-17T03:29:05.097000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you currently have 1 or more Amazon EKS clusters running on Kubernetes version 1.21, listed in the 'Affected resources' tab. If you have deleted this instance, or already upgraded your EKS cluster, please disregard this message.
+
+We previously notified you that extended support for Kubernetes versions now includes Kubernetes version 1.21 and 1.22 [1]. Extended support for Kubernetes version 1.21 has been available since April 1, 2024. Starting May 1, 2024, your Amazon EKS clusters running on Kubernetes version 1.21 in extended support will be charged at $0.60 per cluster hour.
+
+Extended support for Kubernetes version 1.21 in Amazon EKS will end on July 15, 2024. After July 15, 2024, Kubernetes version 1.21 will no longer be supported on Amazon EKS, and all Amazon EKS clusters running on Kubernetes version 1.21 will be automatically updated to the latest platform version of Kubernetes version 1.22. 
+
+A list of your affected resources can be found within the ""Affected resources"" tab. 
+
+Rather than wait for the automatic upgrades, we recommend that you update your 1.21 clusters to Kubernetes version 1.23 or newer before July 15, 2024. If you do not want to use extended support, we recommend that you update your 1.21 clusters to Kubernetes version 1.26 or newer before May 1, 2024. To learn more about the extended support for Kubernetes versions pricing, see our announcement [2]. For instructions on how to update your cluster(s), see the Amazon EKS service documentation [3]. To learn more on Kubernetes version support, visit the Amazon EKS service documentation [4]. 
+
+If you have any questions or concerns, please contact AWS Support [5]. 
+
+[1] https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-eks-support-kubernetes-versions/ 
+[2] https://aws.amazon.com/blogs/containers/amazon-eks-extended-support-for-kubernetes-versions-pricing/
+[3] https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html
+[4] https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+[5] https://aws.amazon.com/support ",arn:aws:eks:us-west-2:998604591968:cluster/eks-cluster-devprod
+998604591968,arn:aws:health:ap-southeast-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_510fa8eb8e36de23099d8c6b0d26485a4e9313bc69d1d84cdcebee4693f5be92,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-southeast-1,2024-10-14T12:30:00+05:30,2024-04-23T13:25:55.939000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support",arn:aws:lambda:ap-southeast-1:998604591968:function:Cleanup
+578845538067,arn:aws:health:us-west-2::event/EKS/AWS_EKS_PLANNED_LIFECYCLE_EVENT/AWS_EKS_PLANNED_LIFECYCLE_EVENT_66875726ef70fb055b6fb1cf6349fe215f4315c24618ac13d083a7a2e57951c9,EKS,AWS_EKS_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-west-2,2024-07-15T12:30:00+05:30,2024-05-17T03:29:05.097000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you currently have 1 or more Amazon EKS clusters running on Kubernetes version 1.21, listed in the 'Affected resources' tab. If you have deleted this instance, or already upgraded your EKS cluster, please disregard this message.
+
+We previously notified you that extended support for Kubernetes versions now includes Kubernetes version 1.21 and 1.22 [1]. Extended support for Kubernetes version 1.21 has been available since April 1, 2024. Starting May 1, 2024, your Amazon EKS clusters running on Kubernetes version 1.21 in extended support will be charged at $0.60 per cluster hour.
+
+Extended support for Kubernetes version 1.21 in Amazon EKS will end on July 15, 2024. After July 15, 2024, Kubernetes version 1.21 will no longer be supported on Amazon EKS, and all Amazon EKS clusters running on Kubernetes version 1.21 will be automatically updated to the latest platform version of Kubernetes version 1.22. 
+
+A list of your affected resources can be found within the ""Affected resources"" tab. 
+
+Rather than wait for the automatic upgrades, we recommend that you update your 1.21 clusters to Kubernetes version 1.23 or newer before July 15, 2024. If you do not want to use extended support, we recommend that you update your 1.21 clusters to Kubernetes version 1.26 or newer before May 1, 2024. To learn more about the extended support for Kubernetes versions pricing, see our announcement [2]. For instructions on how to update your cluster(s), see the Amazon EKS service documentation [3]. To learn more on Kubernetes version support, visit the Amazon EKS service documentation [4]. 
+
+If you have any questions or concerns, please contact AWS Support [5]. 
+
+[1] https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-eks-support-kubernetes-versions/ 
+[2] https://aws.amazon.com/blogs/containers/amazon-eks-extended-support-for-kubernetes-versions-pricing/
+[3] https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html
+[4] https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+[5] https://aws.amazon.com/support ",arn:aws:eks:us-west-2:578845538067:cluster/eks-cluster-devprod-ent
+578845538067,arn:aws:health:us-west-2::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_7b70944093b97e7686ed9b79ab5d222ada8c2154842f8d879bc95d1808b7c05c,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,us-west-2,2024-10-31T12:30:00+05:30,2023-11-01T09:00:50.759000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the US-WEST-2 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication doesn't apply to you, and a separate message will be sent in the future.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 12-month notice, so you have sufficient time to upgrade your database cluster(s).
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. Upgrades may be performed using in-place upgrade [1], snapshot and restore [2], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [3]. The amount of downtime your system will experience depends on the upgrade technique chosen.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders throughout the year prior to the end of the standard support deadline. You can find additional information needed to plan your upgrade in our 'User Guide for Aurora' [4].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [5].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reaches end of life on October 31, 2023. If you need more time to complete the upgrades, you can opt into Amazon RDS Extended Support [6] for Aurora MySQL 2. RDS Extended Support [7] for Aurora is a paid service [8] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. To gain access to extended support, you will need to explicitly opt in to RDS Extended Support. We will reach out to you in early 2024 with detailed instructions for opting into RDS Extended Support through the RDS console, Command Line Interface (CLI), and RDS APIs. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024.
+
+Should you have any questions or concerns, the AWS Support Team is available on the community forums [9] and via Premium Support. [10]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html
+[7] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/
+[8] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs
+[9] https://repost.aws/
+[10] https://aws.amazon.com/support",
+327798492615,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_7daf3fcfab95aa2d388cecf9f34b19f1d6bd2eeb168debe4af29bb05727c0cfd,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-08-22T12:30:00+05:30,2024-07-02T08:26:13.324000+05:30,upcoming,ACCOUNT_SPECIFIC,"[AWS Health may periodically trigger reminder notifications about this communication.]
+
+You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using a SSL/TLS Certificate that is expiring on August 22, 2024.  
+
+A list of your affected resources can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email, it is likely because you created new instances using the 2019 Certificate Authority (CA). After January 25, 2024 all newly created instances that do not explicitly specify a different CA will use the ‘rds-ca-rsa2048-g1’ CA. For information on setting an account level CA override, see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the SSL/TLS protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a CA generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in the AP-SOUTH-1 Region will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The following is the general process to do this:
+
+First, update your application clients with the new certificate, if your application client is using a trust store then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates in our User Guide [2]. For more detailed instructions on updating the trust stores on your client application see our documentation [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issued CAs. ‘rds-ca-rsa2048-g1’ is the default recommended CA because there is no algorithm change. The other CAs use new key algorithms so it could require more testing of your client setup to ensure compatibility. For more information on the new CAs see our documentation [4].
+
+Third, if you want to use a different CA than the default ‘rds-ca-rsa2048-g1’, you will need to set an account level CA override so your new instances will use the CA of your choice. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates, please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. As soon as possible - You should update your client trust store, then you can update your instances server certificate to one generated by one of the new CAs. 
+
+2. After January 26, 2024 - any new database instances default to using the ‘rds-ca-rsa2048-g1’ certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+3. After August 22, 2024 - ‘rds-ca-2019’ will expire. You will need to take action before August 22, 2024, to prevent connectivity failures to your existing database instances.
+
+For more information see our blog [9], and if you have questions or concerns, please contact AWS Support [10].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://aws.amazon.com/blogs/aws/rotate-your-ssl-tls-certificates-now-amazon-rds-and-amazon-aurora-expire-in-2024/
+[10] https://console.aws.amazon.com/support/home","arn:aws:rds:ap-south-1:327798492615:db:whatsapp-bac-instance-1, arn:aws:rds:ap-south-1:327798492615:db:whatsapp-bac-instance-1-ap-south-1b"
+327798492615,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_98763d248b1c352aee275ba70e8529f2a4c25a32c502fde56852c47255be06de,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-31T12:30:00+05:30,2024-05-21T03:08:29.654000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTH-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication does not apply to you.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 6-month reminder, following up from our previous 12-month notice, so you have sufficient time to upgrade your database cluster(s). Please note that upgrading between major versions requires more extensive planning and testing than for a minor version and the process can take substantial time.
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. For how to do the upgrades please consult our documentation [1]. Upgrades may be performed using in-place upgrade [2], snapshot and restore [3], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [4]. The amount of downtime your system will experience depends on the upgrade technique chosen, as well as properties of your schema.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders before the standard support deadline. You can find the latest information needed to plan your upgrade in our 'User Guide for Aurora' [5].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [6].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reached end of life on October 31, 2023. If you need more time to complete the upgrades, you can use Amazon RDS Extended Support [7] for Aurora MySQL 2. RDS Extended Support [8] for Aurora is a paid service [9] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. After October 31, 2024 all your databases continue running Aurora MySQL 2 will be automatically enrolled in RDS Extended Support. Charges for RDS Extended Support will start accruing from December 1, 2024. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024. If your databases are not running Aurora MySQL minor versions 2.11 or 2.12 by October 31, 2024 they will be upgraded before being enrolled into RDS Extended Support. This upgrade will occur during your maintenance window and can not be turned off. 
+
+Should you have any questions or concerns, the AWS Support Team is available on AWS re:Post [10] and via AWS Support. [11]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Updates.MajorVersionUpgrade.2to3 
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure 
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html 
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html 
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html 
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster 
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html 
+[8] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/ 
+[9] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs 
+[10] https://repost.aws/ 
+[11] https://aws.amazon.com/support","arn:aws:rds:ap-south-1:327798492615:cluster:ecomfk2, arn:aws:rds:ap-south-1:327798492615:cluster:whatsapp-bac, arn:aws:rds:ap-south-1:327798492615:cluster:middleware-db, arn:aws:rds:ap-south-1:327798492615:cluster:wbac-prod-1, arn:aws:rds:ap-south-1:327798492615:cluster:myorgportal-db, arn:aws:rds:ap-south-1:327798492615:cluster:ecomfk2-stg, arn:aws:rds:ap-south-1:327798492615:cluster:spfy-prod, arn:aws:rds:ap-south-1:327798492615:cluster:spfy-stag"
+327798492615,arn:aws:health:global::event/EC2/AWS_EC2_PLANNED_LIFECYCLE_EVENT/AWS_EC2_PLANNED_LIFECYCLE_EVENT_206a6ec8671732d601107659937ec0f4e77ee98e9a6ecfd414fde93859963d70,EC2,AWS_EC2_PLANNED_LIFECYCLE_EVENT,scheduledChange,global,2025-03-31T12:30:00+05:30,2024-04-08T13:47:40.664000+05:30,upcoming,ACCOUNT_SPECIFIC,"We first launched EC2 P2 instances (""P2 instances"") in September 2016 and have continued to provide customers a scalable AWS experience on P2 instances since then. However, we can no longer continue to offer the high level of elasticity you have come to expect on the P2 instance family and are therefore working with customers to migrate their workloads to newer G-series or P-series instances by March 31, 2025. We recommend customers migrate to G4, newer G-series instances, P4 or newer P-series instances. To learn more about these instances, you can refer to the AWS documentation [1].
+
+Existing users of P2 instances will see no change in their experience leading up to the retirement date on March 31, 2025. However, starting June 1, 2024, customers will no longer be able to purchase new Reserved Instances or Instance Savings Plans for P2 instances. If you have any account that has not used P2 instances in the past 12 months, that account will be unable to launch new instances starting June 1, 2024. 
+
+Please reach out to your AWS Account Team or AWS Support [2] for any questions or clarifications.
+
+[1] https://aws.amazon.com/ec2/instance-types/#Accelerated_Computing
+[2] https://aws.amazon.com/support",327798492615
+327798492615,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_17b943f7a114ae2b7e9f2cd3f8617c015c796d424bc43c3c5f6e9763bf8e9388,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-10-31T12:30:00+05:30,2023-11-01T09:50:00.241000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTH-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication doesn't apply to you, and a separate message will be sent in the future.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 12-month notice, so you have sufficient time to upgrade your database cluster(s).
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. Upgrades may be performed using in-place upgrade [1], snapshot and restore [2], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [3]. The amount of downtime your system will experience depends on the upgrade technique chosen.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders throughout the year prior to the end of the standard support deadline. You can find additional information needed to plan your upgrade in our 'User Guide for Aurora' [4].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [5].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reaches end of life on October 31, 2023. If you need more time to complete the upgrades, you can opt into Amazon RDS Extended Support [6] for Aurora MySQL 2. RDS Extended Support [7] for Aurora is a paid service [8] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. To gain access to extended support, you will need to explicitly opt in to RDS Extended Support. We will reach out to you in early 2024 with detailed instructions for opting into RDS Extended Support through the RDS console, Command Line Interface (CLI), and RDS APIs. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024.
+
+Should you have any questions or concerns, the AWS Support Team is available on the community forums [9] and via Premium Support. [10]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html
+[7] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/
+[8] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs
+[9] https://repost.aws/
+[10] https://aws.amazon.com/support",
+327798492615,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_ed05552b1fcbf6193bd836b9f099e9807a8de4b624c1ead263564a5ae67ab6c2,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T13:30:00+05:30,2023-10-14T05:50:34.845000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+327798492615,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_40d2690ca0ea2498bdfad167ca24137ee8cd04b26af5dcf6f2ec347025a5267b,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T12:30:00+05:30,2023-08-26T13:11:05.900000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+471726860506,arn:aws:health:us-west-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_2cdae55b8bae9ecb1271be0dc0c0e4d82c75ae7a38393262f5a7b9cdee58c651,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-west-1,2024-10-14T12:30:00+05:30,2024-04-23T10:59:09.257000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support","arn:aws:lambda:us-west-1:471726860506:function:paisa11, arn:aws:lambda:us-west-1:471726860506:function:paisa"
+471726860506,arn:aws:health:ap-south-1::event/LAMBDA/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT/AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT_e5406210867067a5732ca3f927946e600541d532a2b8c80cbc24e922659f23c0,LAMBDA,AWS_LAMBDA_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-14T12:30:00+05:30,2024-04-20T23:43:16.336000+05:30,upcoming,ACCOUNT_SPECIFIC,"We are contacting you as we have identified that your AWS Account currently has one or more AWS Lambda functions using the Python 3.8 runtime.
+
+We are ending support for Python 3.8 in Lambda on October 14, 2024. This follows Python 3.8 End-Of-Life (EOL) which is scheduled for October, 2024 [1].
+
+As described in the Lambda runtime support policy [2], end of support for language runtimes in Lambda happens in several stages. Starting on October 14, 2024, Lambda will no longer apply security patches and other updates to the Python 3.8 runtime used by Lambda functions, and functions using Python 3.8 will no longer be eligible for technical support. Also, Python 3.8 will no longer be available in the AWS Console, although you can still create and update functions that use Python 3.8 via AWS CloudFormation, the AWS CLI, AWS SAM, or other tools. Starting February 28, 2025, you will no longer be able to create new Lambda functions using the Python 3.8 runtime. Starting March 31, 2025, you will no longer be able to update existing functions using the Python 3.8 runtime.
+
+We recommend that you upgrade your existing Python 3.8 functions to the latest available Python runtime in Lambda before October 14, 2024.
+
+End of support does not impact function execution. Your functions will continue to run. However, they will be running on an unsupported runtime which is no longer maintained or patched by the AWS Lambda team.
+
+This notification is generated for functions using the Python 3.8 runtime for the $LATEST function version. The following command shows how to use the AWS CLI [3] to list all functions in a specific region using Python 3.8, including published function versions. To find all such functions in your account, repeat this command for each region:
+
+aws lambda list-functions --region us-west-2 --output text --query ""Functions[?Runtime=='python3.8'].FunctionArn""
+
+A list of your affected Lambda functions is available in the 'Affected resources' tab. 
+
+From 180 days before deprecation, you can also use Trusted Advisor to identify all functions using the Python 3.8 runtime, including published function versions [4].
+
+If you have any concerns or require further assistance, please contact AWS Support [5].
+
+[1] https://devguide.python.org/versions/
+[2] https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html
+[3] https://aws.amazon.com/cli/
+[4] https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html#aws-lambda-functions-deprecated-runtimes
+[5] https://aws.amazon.com/support","arn:aws:lambda:ap-south-1:471726860506:function:s3es, arn:aws:lambda:ap-south-1:471726860506:function:testpython, arn:aws:lambda:ap-south-1:471726860506:function:testGetIP"
+471726860506,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_ed05552b1fcbf6193bd836b9f099e9807a8de4b624c1ead263564a5ae67ab6c2,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T13:30:00+05:30,2023-10-14T05:50:34.845000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+471726860506,arn:aws:health:ap-southeast-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_465f2088d70fccd8772464b57f552f31fe3fcc0f8bc291132f61f9ccd0a05d67,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-southeast-1,2024-08-22T13:30:00+05:30,2023-10-14T01:40:08.567000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTHEAST-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTHEAST-1 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+471726860506,arn:aws:health:ap-southeast-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_283c705f2377b6ce0e3ad4c33031c63d752a106b9e07e304d079cc4779562320,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-southeast-1,2024-08-22T12:30:00+05:30,2023-08-26T14:12:01.523000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTHEAST-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTHEAST-1  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+471726860506,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_40d2690ca0ea2498bdfad167ca24137ee8cd04b26af5dcf6f2ec347025a5267b,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T12:30:00+05:30,2023-08-26T13:11:05.900000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+078331826294,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_98763d248b1c352aee275ba70e8529f2a4c25a32c502fde56852c47255be06de,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-10-31T12:30:00+05:30,2024-05-21T03:08:29.654000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTH-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication does not apply to you.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 6-month reminder, following up from our previous 12-month notice, so you have sufficient time to upgrade your database cluster(s). Please note that upgrading between major versions requires more extensive planning and testing than for a minor version and the process can take substantial time.
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. For how to do the upgrades please consult our documentation [1]. Upgrades may be performed using in-place upgrade [2], snapshot and restore [3], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [4]. The amount of downtime your system will experience depends on the upgrade technique chosen, as well as properties of your schema.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders before the standard support deadline. You can find the latest information needed to plan your upgrade in our 'User Guide for Aurora' [5].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [6].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reached end of life on October 31, 2023. If you need more time to complete the upgrades, you can use Amazon RDS Extended Support [7] for Aurora MySQL 2. RDS Extended Support [8] for Aurora is a paid service [9] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. After October 31, 2024 all your databases continue running Aurora MySQL 2 will be automatically enrolled in RDS Extended Support. Charges for RDS Extended Support will start accruing from December 1, 2024. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024. If your databases are not running Aurora MySQL minor versions 2.11 or 2.12 by October 31, 2024 they will be upgraded before being enrolled into RDS Extended Support. This upgrade will occur during your maintenance window and can not be turned off. 
+
+Should you have any questions or concerns, the AWS Support Team is available on AWS re:Post [10] and via AWS Support. [11]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Updates.MajorVersionUpgrade.2to3 
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure 
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html 
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html 
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html 
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster 
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html 
+[8] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/ 
+[9] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs 
+[10] https://repost.aws/ 
+[11] https://aws.amazon.com/support",arn:aws:rds:ap-south-1:078331826294:cluster:whatsapp-prod-1
+078331826294,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_PLANNED_LIFECYCLE_EVENT/AWS_RDS_PLANNED_LIFECYCLE_EVENT_7daf3fcfab95aa2d388cecf9f34b19f1d6bd2eeb168debe4af29bb05727c0cfd,RDS,AWS_RDS_PLANNED_LIFECYCLE_EVENT,scheduledChange,ap-south-1,2024-08-22T12:30:00+05:30,2024-02-22T12:23:44.733000+05:30,upcoming,ACCOUNT_SPECIFIC,"[AWS Health may periodically trigger reminder notifications about this communication.]
+
+You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using a SSL/TLS Certificate that is expiring on August 22, 2024.  
+
+A list of your affected resources can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email, it is likely because you created new instances using the 2019 Certificate Authority (CA). After January 25, 2024 all newly created instances that do not explicitly specify a different CA will use the ‘rds-ca-rsa2048-g1’ CA. For information on setting an account level CA override, see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the SSL/TLS protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a CA generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in the AP-SOUTH-1 Region will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The following is the general process to do this:
+
+First, update your application clients with the new certificate, if your application client is using a trust store then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates in our User Guide [2]. For more detailed instructions on updating the trust stores on your client application see our documentation [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issued CAs. ‘rds-ca-rsa2048-g1’ is the default recommended CA because there is no algorithm change. The other CAs use new key algorithms so it could require more testing of your client setup to ensure compatibility. For more information on the new CAs see our documentation [4].
+
+Third, if you want to use a different CA than the default ‘rds-ca-rsa2048-g1’, you will need to set an account level CA override so your new instances will use the CA of your choice. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates, please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. As soon as possible - You should update your client trust store, then you can update your instances server certificate to one generated by one of the new CAs. 
+
+2. After January 26, 2024 - any new database instances default to using the ‘rds-ca-rsa2048-g1’ certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+3. After August 22, 2024 - ‘rds-ca-2019’ will expire. You will need to take action before August 22, 2024, to prevent connectivity failures to your existing database instances.
+
+For more information see our blog [9], and if you have questions or concerns, please contact AWS Support [10].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://aws.amazon.com/blogs/aws/rotate-your-ssl-tls-certificates-now-amazon-rds-and-amazon-aurora-expire-in-2024/
+[10] https://console.aws.amazon.com/support/home",
+078331826294,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_17b943f7a114ae2b7e9f2cd3f8617c015c796d424bc43c3c5f6e9763bf8e9388,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-10-31T12:30:00+05:30,2023-11-01T09:50:00.241000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you have one or more Amazon Aurora MySQL clusters running a version of Aurora MySQL 2 (with MySQL 5.7 compatibility) on a provisioned instance in the AP-SOUTH-1 Region. If you are running Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) in an Aurora Serverless v1 cluster, this communication doesn't apply to you, and a separate message will be sent in the future.
+
+Amazon Aurora MySQL 2 (with MySQL 5.7 compatibility) will reach end of standard support on October 31, 2024. We are providing you with a 12-month notice, so you have sufficient time to upgrade your database cluster(s).
+
+We recommend that you upgrade your databases to the latest patch of the default minor version of Amazon Aurora MySQL 3 (currently Aurora MySQL 3.04) or higher, at your earliest convenience before October 31, 2024. Upgrades may be performed using in-place upgrade [1], snapshot and restore [2], or a high availability blue-green upgrade technique which can be fully managed using Amazon RDS Blue/Green Deployments [3]. The amount of downtime your system will experience depends on the upgrade technique chosen.
+
+Major version upgrades will require downtime and might require manual intervention and application changes. We will send you updates and reminders throughout the year prior to the end of the standard support deadline. You can find additional information needed to plan your upgrade in our 'User Guide for Aurora' [4].
+
+The affected clusters are listed in the 'Affected resources' tab. You can also find clusters which are affected by this deprecation notice by referring to the following user guide [5].
+
+Amazon Aurora MySQL provides you with one year of free extended support over community MySQL 5.7, that reaches end of life on October 31, 2023. If you need more time to complete the upgrades, you can opt into Amazon RDS Extended Support [6] for Aurora MySQL 2. RDS Extended Support [7] for Aurora is a paid service [8] that will provide up to 28 additional months of support for Aurora MySQL 2 until the end of extended support in February 2027. To gain access to extended support, you will need to explicitly opt in to RDS Extended Support. We will reach out to you in early 2024 with detailed instructions for opting into RDS Extended Support through the RDS console, Command Line Interface (CLI), and RDS APIs. RDS Extended Support will only be offered for Aurora MySQL minor versions 2.11 and 2.12. If you plan to use Amazon Aurora MySQL 2 beyond end of standard support, please plan to be running your database(s) on one of these minor versions before October 31, 2024.
+
+Should you have any questions or concerns, the AWS Support Team is available on the community forums [9] and via Premium Support. [10]
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.MajorVersionUpgrade.html#AuroraMySQL.Upgrading.Procedure
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-restore-snapshot.html
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html
+[5] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL57.EOL.html#find-cluster
+[6] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html
+[7] https://aws.amazon.com/blogs/database/introducing-amazon-rds-extended-support-for-mysql-databases-on-amazon-aurora-and-amazon-rds/
+[8] https://aws.amazon.com/rds/aurora/pricing/#Amazon_RDS_Extended_Support_costs
+[9] https://repost.aws/
+[10] https://aws.amazon.com/support",
+078331826294,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_ed05552b1fcbf6193bd836b9f099e9807a8de4b624c1ead263564a5ae67ab6c2,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T13:30:00+05:30,2023-10-14T05:50:34.845000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+This is a follow-up notification for SSL/TLS CA certification expiration. If you believe you have already finished this work and still received this email it is likely because you created new instances using the 2019 CA. All newly created instances that don’t explicitly specify a different CA will use the 2019 CA until January 25, 2024 when the default will be switched to rds-ca-rsa2048-g1. For information on setting an account level CA override see the modify-certificates API documentation [1].
+
+If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. Even if you do not currently use SSL for your connections, you could still be affected if your databases server certificate expires, so we still recommend updating your CA.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1 will expire on August 22, 2024. Before this date you will need to update your DB server certificate. The general process to do this is:
+
+First, update your application clients with the new certificate, if your application client is using trust stores then add the new CA certificates into the trust stores of your client applications. RDS provides download links to the CA certificates here [2]. For more detailed instructions on updating the trust stores on your client application see [3].
+
+Second, update the certificate on all your affected database instances to one of the newly issues CA’s. rds-ca-rsa2048-g1 is the default recommended CA because there is no algorithm change. The other CA’s use new key algorithm’s so it could require more testing of your client setup to ensure compatibility. For more information on the new CA’s see [4].
+
+Third, since the 2019 CA is still the default CA you will need to set an account level CA override so your new instances will use one of the new CA’s. To do this a modify-certificates API is available that will allow you to override the default CA on newly created database instances to either the old or one of the new CAs. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [1]. There is also a describe-certificates API [5], that will indicate your current default CA override if you have one set. To set a specific CA during instance creation use the ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [6].
+
+For more detailed instructions on how to perform these updates please see the Amazon RDS instances [7] and Amazon Aurora instances [8] documentation.
+
+Please be aware of the following timeline:
+
+1. Now through August 22, 2024 - you can update client trust store at any time, then you can update your instances server certificate to one generated by one of the new CA’s.
+
+2. Now through January 25, 2024 - new db instances will have the 2019 certificate by default, unless you specify a different CA via the ca-certificate-identifier option on the create-db-instance API; or you specify a default CA override for your account like mentioned in the above section.
+
+3. Starting January 26, 2024 - any new database instances will default to using the rds-ca-rsa2048-g1 certificate. If you wish for new instances to use a different certificate, you can specify which certificate to use with the AWS console or the AWS CLI. For more information, see the create-db-instance API documentation [6].
+
+4. Staring August 22, 2024 - the 2019 CA will expire. You will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances.
+
+If you have questions or concerns, please contact AWS Support [9].
+
+[1] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesAllRegions
+[3] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating
+[4] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.RegionCertificateAuthorities
+[5] https://docs.aws.amazon.com/cli/latest/reference/rds/describe-certificates.html
+[6] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[7] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[8] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[9] https://console.aws.amazon.com/support/home
+
+",
+078331826294,arn:aws:health:ap-south-1::event/RDS/AWS_RDS_OPERATIONAL_NOTIFICATION/AWS_RDS_OPERATIONAL_NOTIFICATION_40d2690ca0ea2498bdfad167ca24137ee8cd04b26af5dcf6f2ec347025a5267b,RDS,AWS_RDS_OPERATIONAL_NOTIFICATION,accountNotification,ap-south-1,2024-08-22T12:30:00+05:30,2023-08-26T13:11:05.900000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because your AWS Account has one or more Amazon RDS, or Amazon Aurora database instances in the AP-SOUTH-1 Region using an SSL/TLS Certificate that is expiring on August 22, 2024. If your applications connect to these instances using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocol, you will need to take action before August 22, 2024 to prevent connectivity failures to your existing database instances. A list of your affected resource(s) can be found in the 'Affected resources' tab.
+
+To protect your communications with your database instances, a Certificate Authority (CA) generates time-bound certificates that are checked by your database client software to authenticate any database instance before exchanging information. Following industry best practices, AWS renews the CA and creates new certificates on a routine basis to ensure customer connections are properly protected for years to come. The current CA in AP-SOUTH-1  will expire on August 22, 2024. Before this date you will need to first add new CA certificates to the trust stores in your client applications and then update the certificates on your database instances to the latest issued version.
+
+For detailed instructions on how to perform these updates please see the Amazon RDS instances [1] and Amazon Aurora instances [2] documentation.
+
+The ca-certificate-identifier option on the create-db-instance API is available for you to create a DB instance with a specific CA. For more information, see the create-db-instance API documentation [3].
+
+A modify-certificates API is also available that will allow you to temporarily override the default CA on newly created database instances to either the old or new CA. This override will only apply while the CA you are overriding to is valid. To use this API you will need to be running the AWS CLI version 1.17 or later. For more information see the modify-certificates API documentation [4].
+
+If you have questions or concerns, please contact AWS Support [5].
+
+[1] https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[2] https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html
+[3] https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
+[4] https://docs.aws.amazon.com/cli/latest/reference/rds/modify-certificates.html
+[5] https://console.aws.amazon.com/support/home
+
+",
+260126818574,arn:aws:health:us-west-2::event/EKS/AWS_EKS_PLANNED_LIFECYCLE_EVENT/AWS_EKS_PLANNED_LIFECYCLE_EVENT_66875726ef70fb055b6fb1cf6349fe215f4315c24618ac13d083a7a2e57951c9,EKS,AWS_EKS_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-west-2,2024-07-15T12:30:00+05:30,2024-05-17T03:29:05.097000+05:30,upcoming,ACCOUNT_SPECIFIC,"You are receiving this message because you currently have 1 or more Amazon EKS clusters running on Kubernetes version 1.21, listed in the 'Affected resources' tab. If you have deleted this instance, or already upgraded your EKS cluster, please disregard this message.
+
+We previously notified you that extended support for Kubernetes versions now includes Kubernetes version 1.21 and 1.22 [1]. Extended support for Kubernetes version 1.21 has been available since April 1, 2024. Starting May 1, 2024, your Amazon EKS clusters running on Kubernetes version 1.21 in extended support will be charged at $0.60 per cluster hour.
+
+Extended support for Kubernetes version 1.21 in Amazon EKS will end on July 15, 2024. After July 15, 2024, Kubernetes version 1.21 will no longer be supported on Amazon EKS, and all Amazon EKS clusters running on Kubernetes version 1.21 will be automatically updated to the latest platform version of Kubernetes version 1.22. 
+
+A list of your affected resources can be found within the ""Affected resources"" tab. 
+
+Rather than wait for the automatic upgrades, we recommend that you update your 1.21 clusters to Kubernetes version 1.23 or newer before July 15, 2024. If you do not want to use extended support, we recommend that you update your 1.21 clusters to Kubernetes version 1.26 or newer before May 1, 2024. To learn more about the extended support for Kubernetes versions pricing, see our announcement [2]. For instructions on how to update your cluster(s), see the Amazon EKS service documentation [3]. To learn more on Kubernetes version support, visit the Amazon EKS service documentation [4]. 
+
+If you have any questions or concerns, please contact AWS Support [5]. 
+
+[1] https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-eks-support-kubernetes-versions/ 
+[2] https://aws.amazon.com/blogs/containers/amazon-eks-extended-support-for-kubernetes-versions-pricing/
+[3] https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html
+[4] https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+[5] https://aws.amazon.com/support ",arn:aws:eks:us-west-2:260126818574:cluster/eks-cluster-devprod
+924456361876,arn:aws:health:us-east-1::event/WORKDOCS/AWS_WORKDOCS_PLANNED_LIFECYCLE_EVENT/AWS_WORKDOCS_PLANNED_LIFECYCLE_EVENT_fa0de66df5e737ef0bfdcc802e2d6cb7cddf74c7b121a22016c7dad2f044c27e,WORKDOCS,AWS_WORKDOCS_PLANNED_LIFECYCLE_EVENT,scheduledChange,us-east-1,2025-04-25T12:30:00+05:30,2024-05-28T19:52:15.064000+05:30,upcoming,ACCOUNT_SPECIFIC,"[AWS Health may periodically trigger reminder notifications about this communication.]
+
+You are receiving this notification because we have decided to end support for the WorkDocs service, effective April 25, 2025. This applies to all instances, including your WorkDocs site, WorkDocs APIs, and WorkDocs Drive.
+
+As an active customer with data stored in Amazon WorkDocs, you will be able to use WorkDocs until April 25, 2025. After this date, the Amazon WorkDocs site, APIs, and Drive will no longer be available, and all data will be permanently deleted.
+
+To make this process easier, we have built a new Data Migration tool [1] that will allow WorkDocs site administrators or AWS console users to export all data from a WorkDocs site into Amazon S3. You can also use WorkDocs’ download features [2] to export data on a user-by-user basis.
+
+You may also take advantage of a special migration offer from Dropbox, an AWS Partner, that is only available for Amazon WorkDocs customers. Dropbox is pleased to provide select business products at discounted rates for qualifying Amazon WorkDocs customers when purchased through the AWS Marketplace. We understand that eligible net new purchases of 10-100 licenses will receive a 40% discount and eligible net new purchases of 101 or more licenses will receive a 45% discount from Dropbox. (All terms and pricing are at Dropbox’s sole discretion.) Please email Dropbox directly at aws-channel-marketplace@dropbox.com if you are interested in this special offer.
+
+Your list of impacted resource(s) can be found in the ""Affected Resources"" tab. 
+
+If you do not take any action, your WorkDocs data will be deleted on April 26, 2025.
+
+If you have questions, please contact AWS Support [3].
+
+[1] https://aws.amazon.com/blogs/business-productivity/how-to-migrate-content-from-amazon-workdocs
+[2] https://docs.aws.amazon.com/workdocs/latest/userguide/download-files.html
+[3] https://aws.amazon.com/support",arn:aws:workdocs:us-east-1:924456361876:organization/d-90675cd07d

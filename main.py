@@ -11,11 +11,12 @@ import os
 
 logging.basicConfig(level=logging.INFO)
 
-def event_details(event, session, csv_writer):
+def event_details(event, session, csv_writer, account_id):
     health_client = session.client('health')
     event_details_response = health_client.describe_event_details(eventArns=[event['arn']])
     for event_details in event_details_response['successfulSet']:
         event_info = {
+            "AccountID": account_id,
             "ARN": event_details['event']['arn'],
             "Service": event_details['event']['service'],
             "EventTypeCode": event_details['event']['eventTypeCode'],
@@ -69,7 +70,7 @@ def describe_events(session, csv_writer, account_id):
     for events_page in events_pages:
         for event in events_page['events']:
             number_of_matching_events += 1
-            event_details(event, session, csv_writer)
+            event_details(event, session, csv_writer, account_id)
 
     if number_of_matching_events == 0:
         logging.info('There are no AWS Health events that match the given filters for account %s', account_id)
@@ -100,8 +101,20 @@ def run_for_account(account_id, role_name, csv_writer):
 
 if __name__ == "__main__":
     accounts = [
-        {'account_id': '211125535116', 'role_name': 'cross-account-health-role'},
-        {'account_id': '590183713919', 'role_name': 'cross-account-health-role'}
+        {'account_id': '998604591968', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '323529618611', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '350027074327', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '914066148492', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '998604591968', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '578845538067', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '327798492615', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '471726860506', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '338897596704', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '078331826294', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '260126818574', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '143948849258', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '470064715030', 'role_name': 'TTN_ReadOnly'},
+        {'account_id': '924456361876', 'role_name': 'TTN_ReadOnly'}
     ]
 
     output_file = 'aws_health_events.csv'
@@ -110,7 +123,7 @@ if __name__ == "__main__":
         os.remove(output_file)
 
     with open(output_file, mode='w', newline='') as csv_file:
-        fieldnames = ["ARN", "Service", "EventTypeCode", "EventTypeCategory", "Region", "StartTime", "LastUpdatedTime", "StatusCode", "EventScopeCode", "Description", "AffectedEntities"]
+        fieldnames = ["AccountID", "ARN", "Service", "EventTypeCode", "EventTypeCategory", "Region", "StartTime", "LastUpdatedTime", "StatusCode", "EventScopeCode", "Description", "AffectedEntities"]
         csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         
         csv_writer.writeheader()
